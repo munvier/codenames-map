@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title></title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <script
+            type="text/javascript"
+            src="//code.jquery.com/jquery-3.4.1.slim.js"
+
+    ></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.slim.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.js"></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
+
+    <style id="compiled-css" type="text/css">
+        .row {
+            margin-top: 20px; }
+
+        .col {
+            border: 2px solid #c8d6e5;
+            margin: 3px;
+            height: 15vh; }
+
+        .col.neutral {
+            background: #c8d6e5; }
+
+        .col.red {
+            background: #ee5253; }
+
+        .col.blue {
+            background: #2e86de; }
+
+        .col.black {
+            background: #222f3e; }
+
+        .container {
+            border: 10px dashed white;
+            padding: 5px; }
+
+        .container.red {
+            border-color: #ee5253; }
+
+        .container.blue {
+            border-color: #2e86de; }
+
+    </style>
+
+</head>
+<body>
+<!--
+Bootstrap docs: https://getbootstrap.com/docs
+-->
+
+<div class="container">
+    <div class="row m-0">
+        <div class="col">
+        </div>
+        <div class="col">
+        </div>
+        <div class="col">
+        </div>
+        <div class="col">
+        </div>
+        <div class="col">
+        </div>
+    </div>
+    <div class="row m-0">
+        <div class="col">
+        </div>
+        <div class="col">
+        </div>
+        <div class="col">
+        </div>
+        <div class="col">
+        </div>
+        <div class="col">
+        </div>
+    </div>
+    <div class="row m-0">
+        <div class="col">
+        </div>
+        <div class="col">
+        </div>
+        <div class="col">
+        </div>
+        <div class="col">
+        </div>
+        <div class="col">
+        </div>
+    </div>
+    <div class="row m-0">
+        <div class="col">
+        </div>
+        <div class="col">
+        </div>
+        <div class="col">
+        </div>
+        <div class="col">
+        </div>
+        <div class="col">
+        </div>
+    </div>
+    <div class="row m-0">
+        <div class="col">
+        </div>
+        <div class="col">
+        </div>
+        <div class="col">
+        </div>
+        <div class="col">
+        </div>
+        <div class="col">
+        </div>
+    </div>
+</div>
+
+
+<!-- TODO: Missing CoffeeScript 2 -->
+
+<script type="text/javascript">//<![CDATA[
+
+
+const first = (Math.random() > 0.5) ? "blue" : "red";
+console.log(first);
+let nbRed = (first === "red") ? 9 : 8,
+    nbBlue = (first === "blue") ? 9 : 8,
+    nbBlack = 1;
+
+let map = [
+    ['neutral','neutral','neutral','neutral','neutral'],
+    ['neutral','neutral','neutral','neutral','neutral'],
+    ['neutral','neutral','neutral','neutral','neutral'],
+    ['neutral','neutral','neutral','neutral','neutral'],
+    ['neutral','neutral','neutral','neutral','neutral'],
+]
+
+$('.container').addClass(first);
+
+while (nbRed) {
+    let x = Math.floor(Math.random() * 5),
+        y = Math.floor(Math.random() * 5);
+
+    if (map[x][y] === "neutral") {
+        map[x][y] = "red";
+        nbRed--;
+    }
+}
+while (nbBlue) {
+    let x = Math.floor(Math.random() * 5),
+        y = Math.floor(Math.random() * 5);
+
+    if (map[x][y] === "neutral") {
+        map[x][y] = "blue";
+        nbBlue--;
+    }
+}
+while (nbBlack) {
+    let x = Math.floor(Math.random() * 5),
+        y = Math.floor(Math.random() * 5);
+
+    if (map[x][y] === "neutral") {
+        map[x][y] = "black";
+        nbBlack--;
+    }
+}
+
+map.forEach(function(values, index1) {
+    values.forEach(function(value, index2) {
+        console.log(index1, index2, value);
+        $('.row').eq(index1).find('.col').eq(index2).addClass(value);
+    });
+});
+
+
+
+
+
+
+
+//]]></script>
+</body>
+</html>
